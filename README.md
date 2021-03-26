@@ -1,4 +1,6 @@
 # android_video_demo
+仿主流软件播放视频（uc浏览器、QQ浏览器，bilibili播放器）
+
 实现功能：
 
 在别的地方使用：
@@ -6,6 +8,7 @@
 video_player.broadcast_this_movie(播放源地址);
 
 即可播放影片
+
 
 
 双击=暂停
