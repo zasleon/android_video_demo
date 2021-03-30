@@ -3,9 +3,9 @@
 
 实现功能：
 
-在别的地方使用：
+在别的地方使用以下代码：
 
-video_player.broadcast_this_movie(播放源地址);
+video_player.play_this_movie(播放源地址);
 
 即可播放影片
 
