@@ -469,10 +469,6 @@ public class video_player extends Activity implements
     @Override
     public void surfaceCreated(android.view.SurfaceHolder arg0) {//刚进入该页面、或切屏回该页面、或熄屏后回来该页面后时，该函数会会触发
         try {
-             if(video_state==state_loaded&&!mediaPlayer.isPlaying())
-            {
-                //如果以暂停方式切屏，切回来后会导致黑屏，除非继续播放画面才能恢复，暂无解决方法
-            }
             if(video_state!=state_loaded) {//if(mediaPlayer==null)//切屏时会触发surfaceDestroyed销毁surface
                 // 再切回来会重新执行surfaceCreated，如果因此而重新执行了mediaPlayer = new android.media.MediaPlayer();这句话，会导致屏幕黑屏
                 //并且在退出该页面activity时会导致ondestroy函数销毁不了mediaplayer，因为多次重新分配（且前几次动态分配的内存都没销毁的话）会导致前几次地址缺失，销毁不了
@@ -484,6 +480,12 @@ public class video_player extends Activity implements
             mediaPlayer.setDisplay(surfaceHolder);
             mediaPlayer.setAudioStreamType(android.media.AudioManager.STREAM_MUSIC);
             mediaPlayer.setOnBufferingUpdateListener(this);
+            if(video_state==state_loaded&&!mediaPlayer.isPlaying())
+            {
+                if(mediaPlayer.getCurrentPosition()!=0)
+                    mediaPlayer.seekTo(mediaPlayer.getCurrentPosition());
+                //如果以暂停方式切屏，切回来后会导致黑屏，除非继续播放画面才能恢复。用该句可以避免“以暂停方式切屏，切回来后会导致黑屏”
+            }
             mediaPlayer.setOnPreparedListener(this);
         } catch (Exception e) {
             add_log("mediaPlayer error");
