@@ -32,7 +32,9 @@ video_player.play_this_movie(播放源地址);
 
 由于各大播放器调节亮度/声音时都使用自制图片来表示音量/亮度达到总范围的多少多少，所以我也自制了一个（也不能说自制，是抄的）
 
-即vertical_processbar是抄来的，划动调数值的时候，旁边会有进度条显示你调到总范围的多少了。
+抄的自定义进度条地址：https://github.com/halzhang/Android-VerticalProgressBar
+
+即vertical_processbar是抄来的，划动调音量/亮度数值时，旁边会有我自制的进度条显示你调到总范围的多少了。（貌似音量调节很诡异抖动bug？？？）
 
 如果不需要我制作的进度条内容，可把volume_processbar、brightness_processbar部分都删掉！
 
