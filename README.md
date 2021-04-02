@@ -1,5 +1,5 @@
 # android_video_demo
-仿主流软件播放视频（uc浏览器、QQ浏览器，bilibili播放器）
+安卓播放器，仿主流软件播放视频（uc浏览器、QQ浏览器，bilibili播放器）
 
 实现功能：
 
