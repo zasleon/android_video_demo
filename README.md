@@ -36,7 +36,7 @@ video_player.play_this_movie(播放源地址);
 
 即vertical_processbar是抄来的，划动调音量/亮度数值时，旁边会有我自制的进度条显示你调到总范围的多少了。（貌似音量调节很诡异抖动bug？？？）
 
-如果不需要我制作的进度条内容，可把volume_processbar、brightness_processbar部分都删掉！
+如果不需要我自定义的进度条内容，可把包含volume_processbar、brightness_processbar部分都删掉！（貌似有三大块）
 
 
 
@@ -46,6 +46,9 @@ video_player.play_this_movie(播放源地址);
 
 
 移动进度条seekbar上的点也是这样，current_time（当前播放时间）会变为即将划动到的时间点处，而非继续随着播放慢慢增秒
+
+
+暂停后切屏，切屏后回来可能会和原有画面不同，原因是切到关键帧了。在surfaceviewcreated里提到过，加了句seekto(getcurrentposition())，不加这句，会是黑屏，只有当继续播放时才有画面
 
 
 
