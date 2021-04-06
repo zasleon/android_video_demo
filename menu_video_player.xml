@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.xielm.myapplication.video_player">
+    <item android:title="x2"
+        android:id="@+id/rate_2000"></item>
+    <item android:title="x1.5"
+        android:id="@+id/rate_1500"></item>
+    <item android:title="x1.25"
+        android:id="@+id/rate_1250"></item>
+    <item android:title="x1"
+        android:id="@+id/rate_1000"></item>
+    <item android:title="x0.5"
+        android:id="@+id/rate_500"></item>
+    <item android:title="x0.25"
+        android:id="@+id/rate_250"></item>
+
+</menu>
