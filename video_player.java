@@ -399,7 +399,7 @@ public class video_player extends Activity {
             //硬修复scroll结束时可能接收不到ACTION_UP动作的bug，即手指划动后手指离开屏幕时，可能这个抬手的动作手势会没与划动衔接，被判定为单个ACTION_UP从而来到这里
             // 这里的硬修复，用于隐藏自定义音量/亮度进度条vertical_processbar、快进/后退显示textview
             if(!nature_refresh) {
-                if(video_duration==0||video_state!=state_loaded)return super.onTouchEvent(event);
+                if(video_duration==0||video_state!=state_loaded)return super.onTouchEvent(event);//如果视频未加载完成，不进行跳转，否则可能会卡死
                 nature_refresh = true;//允许mediaplayer播放自动更新
                 jump_to_this_position.setVisibility(android.view.View.INVISIBLE);
                 mediaPlayer.seekTo(move_position);//定位到视频某时间位置
